@@ -12,6 +12,7 @@ import { Toaster } from './components/ui/sonner';
 interface Question {
   text: string;
   scoreYes: boolean;
+  number: number;
 }
 
 type Answers = {
@@ -31,26 +32,26 @@ function App() {
 
   // Define survey questions with their scoring type
   const questions: Question[] = [
-    { text: "I have the an optimism for success when starting a task.", scoreYes: true },
-    { text: "I’m active in my job.", scoreYes: true },
-    { text: "I show initiative.", scoreYes: true },
-    { text: "In fulfilling the responsible tasks, I try to find justifiable reasons for refusing to fulfill these tasks.", scoreYes: false },
-    { text: "I often choose extremes: either too easy or too complicated tasks.", scoreYes: false },
-    { text: "I never leave obstacles while facing difficult situations, but I’m looking for ways to overcome them.", scoreYes: true },
-    { text: "When the success is mixed with failing, I tend to overestimate my own success.", scoreYes: false },
-    { text: "The productivity of my actions, above all, depends on my own purpose, not on external control.", scoreYes: true },
-    { text: "Fulfilling difficult-enough tasks in a limited time frame, my work results get worse.", scoreYes: false },
-    { text: "Usually I’m persistent in achieving the set goal.", scoreYes: true },
-    { text: "I usually plan my future quite a long way ahead.", scoreYes: true },
-    { text: "If i have to take risks, I do it carefully, mindfully, not impulsevly with prudence.", scoreYes: true },
-    { text: "I am not particularly persistent in achieving the goal, especially in the absence of external control.", scoreYes: false },
-    { text: "Typically, I put myself on either an averagely complex or very complicated but achievable task, rather than setting myself unrealistically high goals.", scoreYes: true },
-    { text: "If, in the course of any task, I fail, then this task for me loses it’s attraction.", scoreYes: false },
-    { text: "When the success is mixed with failing, I tend to exaggerate my failures.", scoreYes: true },
-    { text: "I usually plan my future for the near future.", scoreYes: false },
-    { text: "Working under limited time conditions, the results of my work tend to improve, even if the task is quite complicated.", scoreYes: true },
-    { text: "If I fail to complete a task, I don’t give up on my goal.", scoreYes: true },
-    { text: "If I have chosen a task myself, in the event of a failure, its attractiveness increases even more.", scoreYes: true }
+    { number: 1, text: "I have the an optimism for success when starting a task.", scoreYes: true },
+    { number: 2, text: "I’m active in my job.", scoreYes: true },
+    { number: 3, text: "I show initiative.", scoreYes: true },
+    { number: 4, text: "In fulfilling the responsible tasks, I try to find justifiable reasons for refusing to fulfill these tasks.", scoreYes: false },
+    { number: 5, text: "I often choose extremes: either too easy or too complicated tasks.", scoreYes: false },
+    { number: 6, text: "I never leave obstacles while facing difficult situations, but I’m looking for ways to overcome them.", scoreYes: true },
+    { number: 7, text: "When the success is mixed with failing, I tend to overestimate my own success.", scoreYes: false },
+    { number: 8, text: "The productivity of my actions, above all, depends on my own purpose, not on external control.", scoreYes: true },
+    { number: 9, text: "Fulfilling difficult-enough tasks in a limited time frame, my work results get worse.", scoreYes: false },
+    { number: 10, text: "Usually I’m persistent in achieving the set goal.", scoreYes: true },
+    { number: 11, text: "I usually plan my future quite a long way ahead.", scoreYes: true },
+    { number: 12, text: "If i have to take risks, I do it carefully, mindfully, not impulsevly with prudence.", scoreYes: true },
+    { number: 13, text: "I am not particularly persistent in achieving the goal, especially in the absence of external control.", scoreYes: false },
+    { number: 14, text: "Typically, I put myself on either an averagely complex or very complicated but achievable task, rather than setting myself unrealistically high goals.", scoreYes: true },
+    { number: 15, text: "If, in the course of any task, I fail, then this task for me loses it’s attraction.", scoreYes: false },
+    { number: 16, text: "When the success is mixed with failing, I tend to exaggerate my failures.", scoreYes: true },
+    { number: 17, text: "I usually plan my future for the near future.", scoreYes: false },
+    { number: 18, text: "Working under limited time conditions, the results of my work tend to improve, even if the task is quite complicated.", scoreYes: true },
+    { number: 19, text: "If I fail to complete a task, I don’t give up on my goal.", scoreYes: true },
+    { number: 20, text: "If I have chosen a task myself, in the event of a failure, its attractiveness increases even more.", scoreYes: true }
   ];
 
   // Load answers from URL hash on mount
@@ -110,15 +111,16 @@ function App() {
         description: (
           <>
             <p className="mb-4">
-              Your responses indicate a predominant motivation to avoid failures. This means you tend to focus on preventing negative outcomes rather than achieving positive ones.
+              Your responses indicate a predominant motivation to avoid failures. This means you tend to focus on preventing negative outcomes rather than achieving positive ones. In general, this motivation is based on the idea of avoidance and negative expectations.
             </p>
             <p className="mb-2">People with this motivation type often:</p>
             <ul className="list-disc pl-6 space-y-1">
               <li>Experience increased anxiety about potential failures</li>
-              <li>Show caution in taking on responsibilities</li>
-              <li>Prefer to avoid risky situations</li>
-              <li>May have lower self-confidence</li>
-              <li>Are particularly careful with important tasks</li>
+              <li>Show lower self-confidence</li>
+              <li>Try to avoid responsible tasks</li>
+              <li>May experience high anxiety with important tasks</li>
+              <li>Focus more on avoiding failure than achieving success</li>
+              <li>Can still maintain a responsible attitude to work</li>
             </ul>
           </>
         ),
@@ -130,15 +132,16 @@ function App() {
         description: (
           <>
             <p className="mb-4">
-              Your responses indicate a strong motivation for success. You approach tasks with optimism and confidence.
+              Your responses indicate a strong motivation for success. Your activity is based on the hope of success and the need for achievement. You strive for constructive, positive attainment.
             </p>
             <p className="mb-2">Characteristics of this motivation type include:</p>
             <ul className="list-disc pl-6 space-y-1">
               <li>Taking initiative and showing persistence</li>
-              <li>Believing in your own capabilities</li>
+              <li>Strong belief in yourself and your capabilities</li>
               <li>Being responsible and action-oriented</li>
-              <li>Setting challenging but achievable goals</li>
-              <li>Maintaining focus on positive outcomes</li>
+              <li>Standing out with persistence in reaching goals</li>
+              <li>Being purposeful in your approach</li>
+              <li>Focus on positive outcomes and achievements</li>
             </ul>
           </>
         ),
@@ -157,7 +160,7 @@ function App() {
             <p className="mb-4">
               Your motivation style is not strongly pronounced{leaning}. You likely show flexibility in your approach to challenges, drawing from both motivation types depending on the situation.
             </p>
-            <p className="mb-2">This can be advantageous as it allows you to:</p>
+            <p className="mb-2">This means you tend to:</p>
             <ul className="list-disc pl-6 space-y-1">
               <li>Adapt your approach based on the context</li>
               <li>Balance risk-taking with caution</li>
